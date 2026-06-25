@@ -7,7 +7,7 @@ import { Section } from "../ui/Section";
 
 export function Projects() {
   return (
-    <Section id="projects" className="border-t border-black/10 dark:border-white/10">
+    <Section id="projects" className="border-t border-neutral-200 dark:border-white/10">
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
@@ -27,14 +27,14 @@ export function Projects() {
               <a
                 key={project.title}
                 href={project.href}
-                className="group rounded-3xl border border-black/10 bg-neutral-50 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:border-white/10 dark:bg-neutral-950 dark:hover:bg-neutral-900"
+                className="group rounded-3xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-neutral-950 dark:hover:bg-neutral-900"
               >
                 <div className="flex items-start justify-between gap-6">
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
                   <ArrowUpRight className="mt-1 opacity-40 transition group-hover:opacity-100" />
                 </div>
 
-                <p className="mt-5 leading-7 text-neutral-600 dark:text-neutral-400">
+                <p className="mt-5 leading-7 text-neutral-700 dark:text-neutral-400">
                   {project.description}
                 </p>
 
@@ -42,7 +42,7 @@ export function Projects() {
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-black/10 bg-white px-3 py-1 text-sm text-neutral-700 dark:border-white/10 dark:bg-black dark:text-neutral-300"
+                      className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm text-neutral-700 dark:border-white/10 dark:bg-black dark:text-neutral-300"
                     >
                       {item}
                     </span>

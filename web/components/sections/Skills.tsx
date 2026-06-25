@@ -5,7 +5,7 @@ import { Section } from "../ui/Section";
 
 export function Skills() {
   return (
-    <Section id="skills" className="border-t border-black/10 dark:border-white/10">
+    <Section id="skills" className="border-t border-neutral-200 dark:border-white/10">
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
@@ -24,7 +24,7 @@ export function Skills() {
             {skills.map((group) => (
               <div
                 key={group.title}
-                className="rounded-3xl border border-black/10 bg-neutral-50 p-7 dark:border-white/10 dark:bg-neutral-950"
+                className="rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
               >
                 <h3 className="text-xl font-semibold">{group.title}</h3>
 
@@ -32,7 +32,7 @@ export function Skills() {
                   {group.items.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-black/10 bg-white px-3 py-1.5 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-black dark:text-neutral-300"
+                      className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-black dark:text-neutral-300"
                     >
                       {skill}
                     </span>

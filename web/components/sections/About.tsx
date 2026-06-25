@@ -5,7 +5,7 @@ import { Section } from "../ui/Section";
 
 export function About() {
   return (
-    <Section id="about" className="border-t border-black/10 dark:border-white/10">
+    <Section id="about" className="border-t border-neutral-200 dark:border-white/10">
       <Container>
         <Reveal>
           <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
@@ -19,7 +19,7 @@ export function About() {
               </h2>
             </div>
 
-            <div className="space-y-6 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+            <div className="space-y-6 text-lg leading-8 text-neutral-700 dark:text-neutral-400">
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

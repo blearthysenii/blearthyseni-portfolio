@@ -10,7 +10,7 @@ import { Section } from "../ui/Section";
 
 export function Contact() {
   return (
-    <Section id="contact" className="border-t border-black/10 dark:border-white/10">
+    <Section id="contact" className="border-t border-neutral-200 dark:border-white/10">
       <Container>
         <Reveal>
           <div className="rounded-[2rem] bg-black p-8 text-white md:p-12">

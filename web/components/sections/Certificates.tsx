@@ -5,7 +5,7 @@ import { Section } from "../ui/Section";
 
 export function Certificates() {
   return (
-    <Section id="certificates" className="border-t border-black/10 dark:border-white/10">
+    <Section id="certificates" className="border-t border-neutral-200 dark:border-white/10">
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
@@ -24,7 +24,7 @@ export function Certificates() {
             {achievements.map((item) => (
               <div
                 key={item}
-                className="rounded-3xl border border-black/10 bg-neutral-50 p-6 text-lg font-medium dark:border-white/10 dark:bg-neutral-950"
+                className="rounded-3xl border border-neutral-200 bg-white p-6 text-lg font-medium shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
               >
                 {item}
               </div>

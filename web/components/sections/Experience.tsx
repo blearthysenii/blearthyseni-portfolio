@@ -5,7 +5,7 @@ import { Section } from "../ui/Section";
 
 export function Experience() {
   return (
-    <Section id="experience" className="border-t border-black/10 dark:border-white/10">
+    <Section id="experience" className="border-t border-neutral-200 dark:border-white/10">
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
@@ -24,7 +24,7 @@ export function Experience() {
             {experience.map((item) => (
               <div
                 key={`${item.role}-${item.company}`}
-                className="rounded-3xl border border-black/10 bg-neutral-50 p-6 dark:border-white/10 dark:bg-neutral-950"
+                className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
               >
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                   <div>
@@ -39,7 +39,7 @@ export function Experience() {
                   </span>
                 </div>
 
-                <p className="mt-5 leading-7 text-neutral-600 dark:text-neutral-400">
+                <p className="mt-5 leading-7 text-neutral-700 dark:text-neutral-400">
                   {item.description}
                 </p>
               </div>

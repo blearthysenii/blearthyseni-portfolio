@@ -18,7 +18,7 @@ export function Button({
     primary:
       "bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200",
     secondary:
-      "border border-black/10 bg-white text-black hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:bg-neutral-900",
+      "border border-neutral-300 bg-white text-neutral-900 hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:bg-neutral-900",
   };
 
   if (href) {

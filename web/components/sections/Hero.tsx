@@ -10,7 +10,7 @@ import { Container } from "../ui/Container";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-32">
+    <section className="relative min-h-screen overflow-hidden pt-32 bg-white dark:bg-transparent">
       <Container className="flex min-h-[calc(100vh-8rem)] items-center">
         <div className="max-w-3xl">
           <Badge>Available for opportunities</Badge>
