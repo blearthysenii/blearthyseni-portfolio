@@ -3,18 +3,23 @@ import { Reveal } from "../common/Reveal";
 import { Container } from "../ui/Container";
 import { Section } from "../ui/Section";
 
-export function Certificates() {
+export function Certificates({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
-    <Section id="certificates" className="border-t border-neutral-200 dark:border-white/10">
+    <Section
+      id={locale === "al" ? "certifikatat" : "certificates"}
+      className="border-t border-neutral-200 dark:border-white/10"
+    >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
             <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-              Achievements
+              {locale === "al" ? "Arritjet" : "Achievements"}
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Learning, practice and progress through real projects.
+              {locale === "al"
+                ? "Mësim, praktikë dhe progres përmes projekteve reale."
+                : "Learning, practice and progress through real projects."}
             </h2>
           </div>
         </Reveal>
