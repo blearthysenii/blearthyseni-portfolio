@@ -27,7 +27,7 @@ export function Hero({ locale = "en" }: { locale?: "en" | "al" }) {
             className="relative z-10 h-auto w-[92%] object-contain drop-shadow-[0_24px_45px_rgba(0,0,0,0.35)] md:w-full"
           />
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[55%] bg-gradient-to-t from-[#050505] from-40% via-[#050505]/90 to-transparent md:h-48 md:from-transparent md:via-[#050505]/80 md:to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[30%] bg-gradient-to-t from-[#050505] from-30% to-transparent md:h-[35%] md:from-[#050505] md:from-30% md:to-transparent" />
         </div>
 
         {/* Content */}
