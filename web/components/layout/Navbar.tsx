@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 
 const navLinks = [
@@ -11,9 +10,12 @@ const navLinks = [
 
 export function Navbar() {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-neutral-200 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-black/70">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
-        <Link href="/" className="text-sm font-semibold tracking-tight">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-neutral-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#050505]">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="text-sm font-bold tracking-tight text-black dark:text-white"
+        >
           Bleart Hyseni
         </Link>
 
@@ -22,15 +24,14 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-neutral-600 transition hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+              className="text-sm font-medium text-neutral-600 transition hover:text-black dark:text-neutral-400 dark:hover:text-white"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
+        <div className="flex items-center md:hidden">
           <MobileMenu />
         </div>
       </nav>
