@@ -7,12 +7,12 @@ export function Experience({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
     <Section
       id={locale === "al" ? "eksperienca" : "experience"}
-      className="border-t border-neutral-200 dark:border-white/10"
+      className="border-t border-white/10"
     >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
-            <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+            <p className="text-sm font-medium text-neutral-400">
               {locale === "al" ? "Eksperienca" : "Experience"}
             </p>
 
@@ -29,22 +29,22 @@ export function Experience({ locale = "en" }: { locale?: "en" | "al" }) {
             {experience.map((item) => (
               <div
                 key={`${item.role}-${item.company}`}
-                className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
+                className="rounded-3xl border border-white/10 bg-neutral-950 p-6"
               >
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                   <div>
                     <h3 className="text-xl font-semibold">{item.role}</h3>
-                    <p className="mt-1 text-neutral-500 dark:text-neutral-400">
+                    <p className="mt-1 text-neutral-400">
                       {item.company}
                     </p>
                   </div>
 
-                  <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                  <span className="text-sm text-neutral-400">
                     {item.period}
                   </span>
                 </div>
 
-                <p className="mt-5 leading-7 text-neutral-700 dark:text-neutral-400">
+                <p className="mt-5 leading-7 text-neutral-400">
                   {item.description}
                 </p>
               </div>

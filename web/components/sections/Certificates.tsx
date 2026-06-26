@@ -7,12 +7,12 @@ export function Certificates({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
     <Section
       id={locale === "al" ? "certifikatat" : "certificates"}
-      className="border-t border-neutral-200 dark:border-white/10"
+      className="border-t border-white/10"
     >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
-            <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+            <p className="text-sm font-medium text-neutral-400">
               {locale === "al" ? "Arritjet" : "Achievements"}
             </p>
 
@@ -29,7 +29,7 @@ export function Certificates({ locale = "en" }: { locale?: "en" | "al" }) {
             {achievements.map((item) => (
               <div
                 key={item}
-                className="rounded-3xl border border-neutral-200 bg-white p-6 text-lg font-medium shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
+                className="rounded-3xl border border-white/10 bg-neutral-950 p-6 text-lg font-medium"
               >
                 {item}
               </div>

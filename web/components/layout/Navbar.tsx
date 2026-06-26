@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 
 const links = {
@@ -29,11 +28,11 @@ export function Navbar() {
   const switchLabel = locale === "en" ? "AL" : "EN";
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-neutral-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#050505]">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#050505] shadow-sm">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Link
           href={`/${locale}`}
-          className="text-sm font-bold tracking-tight text-black dark:text-white"
+          className="text-sm font-bold tracking-tight text-white"
         >
           Bleart Hyseni
         </Link>
@@ -43,7 +42,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-neutral-600 transition hover:text-black dark:text-neutral-400 dark:hover:text-white"
+              className="text-sm font-medium text-neutral-400 transition hover:text-white"
             >
               {link.label}
             </Link>
@@ -51,11 +50,9 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
-
           <Link
             href={switchHref}
-            className="inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-neutral-200 bg-white px-3 text-xs font-bold text-black transition hover:bg-neutral-50 dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:bg-neutral-900"
+            className="inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-white/10 bg-neutral-950 px-3 text-xs font-bold text-white transition hover:bg-neutral-900"
           >
             {switchLabel}
           </Link>

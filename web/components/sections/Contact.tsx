@@ -12,7 +12,7 @@ export function Contact({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
     <Section
       id={locale === "al" ? "kontakti" : "contact"}
-      className="border-t border-neutral-200 dark:border-white/10"
+      className="border-t border-white/10"
     >
       <Container>
         <Reveal>

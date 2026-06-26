@@ -7,12 +7,12 @@ export function Skills({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
     <Section
       id={locale === "al" ? "aftesite" : "skills"}
-      className="border-t border-neutral-200 dark:border-white/10"
+      className="border-t border-white/10"
     >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
-            <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+            <p className="text-sm font-medium text-neutral-400">
               {locale === "al" ? "Teknologjitë" : "Tech Stack"}
             </p>
 
@@ -29,7 +29,7 @@ export function Skills({ locale = "en" }: { locale?: "en" | "al" }) {
             {skills.map((group) => (
               <div
                 key={group.title}
-                className="rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
+                className="rounded-3xl border border-white/10 bg-neutral-950 p-7"
               >
                 <h3 className="text-xl font-semibold">
                   {locale === "al" && group.title === "Database"
@@ -43,7 +43,7 @@ export function Skills({ locale = "en" }: { locale?: "en" | "al" }) {
                   {group.items.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-black dark:text-neutral-300"
+                      className="rounded-full border border-white/10 bg-black px-3 py-1.5 text-sm font-medium text-neutral-300"
                     >
                       {skill}
                     </span>

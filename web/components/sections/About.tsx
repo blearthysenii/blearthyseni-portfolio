@@ -7,13 +7,13 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
     <Section
       id={locale === "al" ? "rreth-meje" : "about"}
-      className="border-t border-neutral-200 dark:border-white/10"
+      className="border-t border-white/10"
     >
       <Container>
         <Reveal>
           <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+              <p className="text-sm font-medium text-neutral-400">
                 {locale === "al" ? "Rreth meje" : "About me"}
               </p>
 
@@ -22,7 +22,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
               </h2>
             </div>
 
-            <div className="space-y-6 text-lg leading-8 text-neutral-700 dark:text-neutral-400">
+            <div className="space-y-6 text-lg leading-8 text-neutral-400">
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
