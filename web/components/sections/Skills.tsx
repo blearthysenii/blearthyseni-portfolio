@@ -3,18 +3,23 @@ import { Reveal } from "../common/Reveal";
 import { Container } from "../ui/Container";
 import { Section } from "../ui/Section";
 
-export function Skills() {
+export function Skills({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
-    <Section id="skills" className="border-t border-neutral-200 dark:border-white/10">
+    <Section
+      id={locale === "al" ? "aftesite" : "skills"}
+      className="border-t border-neutral-200 dark:border-white/10"
+    >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
             <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-              Tech Stack
+              {locale === "al" ? "Teknologjitë" : "Tech Stack"}
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Technologies I use every day.
+              {locale === "al"
+                ? "Teknologjitë që përdor çdo ditë."
+                : "Technologies I use every day."}
             </h2>
           </div>
         </Reveal>
@@ -26,7 +31,13 @@ export function Skills() {
                 key={group.title}
                 className="rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-neutral-950 dark:shadow-none"
               >
-                <h3 className="text-xl font-semibold">{group.title}</h3>
+                <h3 className="text-xl font-semibold">
+                  {locale === "al" && group.title === "Database"
+                    ? "Databaza"
+                    : locale === "al" && group.title === "Tools"
+                    ? "Veglat"
+                    : group.title}
+                </h3>
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {group.items.map((skill) => (
