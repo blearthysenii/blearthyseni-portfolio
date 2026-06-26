@@ -1,57 +1,66 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-const links = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+type Locale = "en" | "al";
 
-export function MobileMenu() {
+const links = {
+  en: [
+    { label: "About", href: "about" },
+    { label: "Skills", href: "skills" },
+    { label: "Projects", href: "projects" },
+    { label: "Experience", href: "experience" },
+    { label: "Contact", href: "contact" },
+  ],
+  al: [
+    { label: "Rreth meje", href: "about" },
+    { label: "Aftesite", href: "skills" },
+    { label: "Projektet", href: "projects" },
+    { label: "Eksperienca", href: "experience" },
+    { label: "Kontakti", href: "contact" },
+  ],
+};
+
+export function MobileMenu({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden"
+        className="text-black transition duration-300 dark:text-white md:hidden"
         aria-label="Menu"
       >
-        {open ? <X size={24} /> : <Menu size={24} />}
+        <Menu size={24} />
       </button>
 
-      {open && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl md:hidden">
-          <div className="flex h-16 items-center justify-between px-6">
-            <span className="font-semibold text-white">Bleart Hyseni</span>
-
-            <button
+      <div
+        className={`fixed left-0 top-16 z-40 w-full border-b border-neutral-200 bg-white text-black shadow-sm transition-all duration-300 ease-out dark:border-white/10 dark:bg-[#050505] dark:text-white md:hidden ${
+          open
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-4 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col px-6 py-6">
+          {links[locale].map((item, index) => (
+            <Link
+              key={item.href}
+              href={`/${locale}#${item.href}`}
               onClick={() => setOpen(false)}
-              className="text-white"
+              className={`py-3 text-lg font-medium text-neutral-800 transition-all duration-300 hover:text-black dark:text-neutral-200 dark:hover:text-white ${
+                open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+              }`}
+              style={{
+                transitionDelay: open ? `${index * 55}ms` : "0ms",
+              }}
             >
-              <X size={24} />
-            </button>
-          </div>
-
-          <div className="mt-12 flex flex-col items-center gap-8">
-            {links.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="text-2xl font-medium text-white transition hover:text-neutral-400"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+              {item.label}
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
     </>
   );
 }
