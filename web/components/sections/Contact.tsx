@@ -8,21 +8,29 @@ import { Reveal } from "../common/Reveal";
 import { Container } from "../ui/Container";
 import { Section } from "../ui/Section";
 
-export function Contact() {
+export function Contact({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
-    <Section id="contact" className="border-t border-neutral-200 dark:border-white/10">
+    <Section
+      id={locale === "al" ? "kontakti" : "contact"}
+      className="border-t border-neutral-200 dark:border-white/10"
+    >
       <Container>
         <Reveal>
           <div className="rounded-[2rem] bg-black p-8 text-white md:p-12">
-            <p className="text-sm font-medium text-neutral-400">Contact</p>
+            <p className="text-sm font-medium text-neutral-400">
+              {locale === "al" ? "Kontakti" : "Contact"}
+            </p>
 
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
-              Let&apos;s build something clean, useful and modern.
+              {locale === "al"
+                ? "Le të ndërtojmë diçka të pastër, të dobishme dhe moderne."
+                : "Let&apos;s build something clean, useful and modern."}
             </h2>
 
             <p className="mt-6 max-w-2xl leading-7 text-neutral-400">
-              I&apos;m open to internship opportunities, junior developer roles and
-              full-stack web projects.
+              {locale === "al"
+                ? "Jam i hapur për mundësi praktike, role junior developer dhe projekte full-stack web."
+                : "I&apos;m open to internship opportunities, junior developer roles and full-stack web projects."}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -31,7 +39,7 @@ export function Contact() {
                 className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-neutral-200"
               >
                 <Mail size={18} />
-                Send Email
+                {locale === "al" ? "Dërgo Email" : "Send Email"}
               </a>
 
               <a
