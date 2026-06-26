@@ -5,18 +5,23 @@ import { Reveal } from "../common/Reveal";
 import { Container } from "../ui/Container";
 import { Section } from "../ui/Section";
 
-export function Projects() {
+export function Projects({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
-    <Section id="projects" className="border-t border-neutral-200 dark:border-white/10">
+    <Section
+      id={locale === "al" ? "projektet" : "projects"}
+      className="border-t border-neutral-200 dark:border-white/10"
+    >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
             <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-              Featured Projects
+              {locale === "al" ? "Projektet kryesore" : "Featured Projects"}
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Real projects built with full-stack technologies.
+              {locale === "al"
+                ? "Projekte reale të ndërtuara me teknologji full-stack."
+                : "Real projects built with full-stack technologies."}
             </h2>
           </div>
         </Reveal>
