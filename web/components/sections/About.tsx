@@ -3,15 +3,18 @@ import { Reveal } from "../common/Reveal";
 import { Container } from "../ui/Container";
 import { Section } from "../ui/Section";
 
-export function About() {
+export function About({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
-    <Section id="about" className="border-t border-neutral-200 dark:border-white/10">
+    <Section
+      id={locale === "al" ? "rreth-meje" : "about"}
+      className="border-t border-neutral-200 dark:border-white/10"
+    >
       <Container>
         <Reveal>
           <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-                About me
+                {locale === "al" ? "Rreth meje" : "About me"}
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
