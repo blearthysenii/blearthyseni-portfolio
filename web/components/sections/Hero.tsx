@@ -17,7 +17,7 @@ const fadeUp = {
   show: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as number[], delay },
   }),
 };
 
@@ -26,7 +26,7 @@ const fadeIn = {
   show: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 },
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as number[], delay: 0.1 },
   },
 };
 
@@ -41,7 +41,7 @@ const wordContainer = {
   exit: {
     transition: {
       staggerChildren: 0.05,
-      staggerDirection: -1,
+      staggerDirection: -1 as const,
     },
   },
 };
@@ -51,12 +51,12 @@ const wordItem = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as number[] },
   },
   exit: {
     opacity: 0,
     y: -20,
-    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as number[] },
   },
 };
 
