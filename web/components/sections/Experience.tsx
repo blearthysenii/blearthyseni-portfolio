@@ -3,18 +3,23 @@ import { Reveal } from "../common/Reveal";
 import { Container } from "../ui/Container";
 import { Section } from "../ui/Section";
 
-export function Experience() {
+export function Experience({ locale = "en" }: { locale?: "en" | "al" }) {
   return (
-    <Section id="experience" className="border-t border-neutral-200 dark:border-white/10">
+    <Section
+      id={locale === "al" ? "eksperienca" : "experience"}
+      className="border-t border-neutral-200 dark:border-white/10"
+    >
       <Container>
         <Reveal>
           <div className="mb-14 max-w-2xl">
             <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-              Experience
+              {locale === "al" ? "Eksperienca" : "Experience"}
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Practical experience building real software projects.
+              {locale === "al"
+                ? "Eksperiencë praktike në ndërtimin e projekteve reale softuerike."
+                : "Practical experience building real software projects."}
             </h2>
           </div>
         </Reveal>
