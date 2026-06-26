@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 
 import { site } from "../../lib/data/site";
@@ -12,25 +12,27 @@ import { socials } from "../../lib/data/socials";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 
-const fadeUp = {
+const EASE = "easeOut";
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as number[], delay },
+    transition: { duration: 0.6, ease: EASE, delay },
   }),
 };
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, scale: 1.03 },
   show: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as number[], delay: 0.1 },
+    transition: { duration: 0.9, ease: EASE, delay: 0.1 },
   },
 };
 
-const wordContainer = {
+const wordContainer: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -41,22 +43,22 @@ const wordContainer = {
   exit: {
     transition: {
       staggerChildren: 0.05,
-      staggerDirection: -1 as const,
+      staggerDirection: -1,
     },
   },
 };
 
-const wordItem = {
+const wordItem: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as number[] },
+    transition: { duration: 0.45, ease: EASE },
   },
   exit: {
     opacity: 0,
     y: -20,
-    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as number[] },
+    transition: { duration: 0.3, ease: EASE },
   },
 };
 
@@ -132,7 +134,7 @@ export function Hero({ locale = "en" }: { locale?: "en" | "al" }) {
         </motion.div>
 
         {/* Content */}
-        <div className="relative z-30 order-2 mt-[-55%] max-w-3xl md:order-none md:mt-0 md:max-w-[54%] lg:max-w-[58%]">
+        <div className="relative z-30 order-2 mt-[-45%] max-w-3xl md:order-none md:mt-0 md:max-w-[54%] lg:max-w-[58%]">
 
           <div className="overflow-hidden">
             <AnimatePresence mode="wait">
