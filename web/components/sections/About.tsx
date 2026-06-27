@@ -18,14 +18,14 @@ const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.15 },
-  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1], delay },
+  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
 });
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0 },
   whileInView: { opacity: 1 },
   viewport: { once: true, amount: 0.15 },
-  transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay },
+  transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
 });
 
 function Ticker({
@@ -99,7 +99,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.1 }}
           className="relative mb-9 w-full overflow-hidden rounded-[10px]"
           style={{ aspectRatio: "4 / 3" }}
         >
@@ -169,7 +169,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.2 }}
               className="relative h-[350px] w-[320px] shrink-0 overflow-hidden"
             >
               <Image
@@ -191,7 +191,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
                     initial={{ opacity: 0, x: 24 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.35 + i * 0.12 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.35 + i * 0.12 }}
                   >
                     {p}
                   </motion.p>
@@ -202,7 +202,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
                 initial={{ opacity: 0, scaleX: 0 }}
                 whileInView={{ opacity: 1, scaleX: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.7 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.7 }}
                 style={{ transformOrigin: "right" }}
                 className="mt-7 text-right"
               >
