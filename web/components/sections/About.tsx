@@ -127,7 +127,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
           className="mt-10 border-t border-white/10 pt-5 text-right"
         >
           <span className="text-[10px] font-medium uppercase tracking-[0.45em] text-neutral-600">
-            {site.url ?? "blearthyseni.com"}
+            {site.domain}
           </span>
         </motion.div>
       </div>
@@ -207,7 +207,7 @@ export function About({ locale = "en" }: { locale?: "en" | "al" }) {
                 className="mt-7 text-right"
               >
                 <span className="text-[10px] font-medium uppercase tracking-[0.5em] text-[#a67c48]">
-                  {site.url ?? "blearthyseni.com"}
+                  {site.domain}
                 </span>
               </motion.div>
             </div>
