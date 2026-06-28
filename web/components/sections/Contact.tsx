@@ -160,7 +160,7 @@ export function Contact({ locale = "en" }: { locale?: "en" | "al" }) {
                     type="text"
                     required
                     placeholder={copy.namePlaceholder}
-                    className="h-10 w-full rounded-[3px] border border-transparent bg-[#252525] px-3 text-sm text-white outline-none placeholder:text-neutral-500 focus:border-white/20"
+                    className="h-10 w-full rounded-[3px] border border-transparent bg-[#252525] px-3 text-[16px] text-white outline-none placeholder:text-neutral-500 focus:border-white/20"
                   />
                 </label>
 
@@ -173,7 +173,7 @@ export function Contact({ locale = "en" }: { locale?: "en" | "al" }) {
                     type="email"
                     required
                     placeholder={copy.emailPlaceholder}
-                    className="h-10 w-full rounded-[3px] border border-transparent bg-[#252525] px-3 text-sm text-white outline-none placeholder:text-neutral-500 focus:border-white/20"
+                    className="h-10 w-full rounded-[3px] border border-transparent bg-[#252525] px-3 text-[16px] text-white outline-none placeholder:text-neutral-500 focus:border-white/20"
                   />
                 </label>
 
@@ -186,7 +186,7 @@ export function Contact({ locale = "en" }: { locale?: "en" | "al" }) {
                     rows={8}
                     required
                     placeholder={copy.messagePlaceholder}
-                    className="min-h-[176px] w-full resize-y rounded-[3px] border border-transparent bg-[#252525] px-3 py-3 text-sm text-white outline-none placeholder:text-neutral-500 focus:border-white/20"
+                    className="min-h-[176px] w-full resize-y rounded-[3px] border border-transparent bg-[#252525] px-3 py-3 text-[16px] text-white outline-none placeholder:text-neutral-500 focus:border-white/20"
                   />
                 </label>
 
