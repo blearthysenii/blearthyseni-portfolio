@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.blearthyseni.com/sitemap.xml",
+    sitemap: "https://blearthyseni.com/sitemap.xml",
   };
 }
