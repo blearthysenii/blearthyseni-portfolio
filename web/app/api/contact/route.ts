@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function escapeHtml(value: string) {
   return value
     .replaceAll("&", "&amp;")
@@ -37,6 +35,7 @@ export async function POST(request: NextRequest) {
     const safeName = escapeHtml(String(name));
     const safeEmail = escapeHtml(String(email));
     const safeMessage = escapeHtml(String(message));
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { error } = await resend.emails.send({
       from: process.env.EMAIL_FROM,
