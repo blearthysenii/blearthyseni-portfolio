@@ -15,9 +15,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://blearthyseni.com"),
+
   title: "Bleart Hyseni | Full Stack Web Developer",
   description:
     "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer focused on modern web applications, FastAPI, React, Next.js and PostgreSQL.",
+
+  alternates: {
+    canonical: "https://blearthyseni.com",
+  },
+
+  openGraph: {
+    title: "Bleart Hyseni | Full Stack Web Developer",
+    description:
+      "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer focused on modern web applications, FastAPI, React, Next.js and PostgreSQL.",
+    url: "https://blearthyseni.com",
+    siteName: "Bleart Hyseni",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Bleart Hyseni | Full Stack Web Developer",
+    description:
+      "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer focused on modern web applications, FastAPI, React, Next.js and PostgreSQL.",
+  },
 };
 
 export const viewport: Viewport = {
