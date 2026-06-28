@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
@@ -33,6 +34,8 @@ export function MobileMenu({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const homePath = `/${locale}`;
+  const resumeHref = locale === "en" ? "/en/resume" : "/al/cv";
+  const resumeLabel = locale === "en" ? "Resume" : "CV";
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -76,28 +79,48 @@ export function MobileMenu({ locale }: { locale: Locale }) {
       >
         <nav
           className={`mx-3 mt-3 max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-[#080808]/95 p-3 text-white shadow-2xl shadow-black/30 backdrop-blur-xl transition-all duration-300 ease-out ${
-          open
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-4 opacity-0"
-        }`}
+            open
+              ? "pointer-events-auto translate-y-0 opacity-100"
+              : "pointer-events-none -translate-y-4 opacity-0"
+          }`}
           onClick={(event) => event.stopPropagation()}
-      >
+        >
           <div className="flex flex-col">
-          {links[locale].map((item, index) => (
-            <Link
-              key={item.id}
-              href={`/${locale}#${item.id}`}
-              onClick={(event) => handleLinkClick(event, item.id)}
+            {links[locale].map((item, index) => (
+              <Link
+                key={item.id}
+                href={`/${locale}#${item.id}`}
+                onClick={(event) => handleLinkClick(event, item.id)}
                 className={`rounded-2xl px-4 py-4 text-lg font-medium text-neutral-200 transition-all duration-300 hover:bg-white/[0.04] hover:text-white ${
+                  open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: open ? `${index * 55}ms` : "0ms",
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href={resumeHref}
+              onClick={() => setOpen(false)}
+              className={`flex items-center gap-3 rounded-2xl px-4 py-4 text-lg font-medium text-neutral-200 transition-all duration-300 hover:bg-white/[0.04] hover:text-white ${
                 open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
               }`}
               style={{
-                transitionDelay: open ? `${index * 55}ms` : "0ms",
+                transitionDelay: open ? `${links[locale].length * 55}ms` : "0ms",
               }}
             >
-              {item.label}
+              <Image
+                src="/icons/resume.png"
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5"
+                aria-hidden="true"
+              />
+              {resumeLabel}
             </Link>
-          ))}
           </div>
         </nav>
       </div>

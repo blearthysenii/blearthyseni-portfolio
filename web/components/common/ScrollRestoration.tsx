@@ -41,6 +41,55 @@ function restoreScrollPosition(top: number) {
   });
 }
 
+function getHashTargetId() {
+  const hash = window.location.hash.slice(1);
+
+  if (!hash) {
+    return null;
+  }
+
+  try {
+    return decodeURIComponent(hash);
+  } catch {
+    return hash;
+  }
+}
+
+function getTargetScrollPosition(target: HTMLElement) {
+  const scrollPaddingTop =
+    Number.parseFloat(
+      window.getComputedStyle(document.documentElement).scrollPaddingTop,
+    ) || 0;
+  const maxY = document.documentElement.scrollHeight - window.innerHeight;
+
+  return Math.min(
+    Math.max(target.getBoundingClientRect().top + window.scrollY - scrollPaddingTop, 0),
+    maxY,
+  );
+}
+
+function restoreHashTarget() {
+  const hashTargetId = getHashTargetId();
+
+  if (!hashTargetId) {
+    return false;
+  }
+
+  const target = document.getElementById(hashTargetId);
+
+  if (!target) {
+    return false;
+  }
+
+  restoreScrollPosition(getTargetScrollPosition(target));
+
+  window.setTimeout(() => {
+    restoreScrollPosition(getTargetScrollPosition(target));
+  }, 120);
+
+  return true;
+}
+
 export function ScrollRestoration() {
   const pathname = usePathname();
 
@@ -58,6 +107,10 @@ export function ScrollRestoration() {
   }, []);
 
   useLayoutEffect(() => {
+    if (restoreHashTarget()) {
+      return;
+    }
+
     const storedY = readScrollPosition();
 
     if (storedY === null) {
@@ -70,6 +123,20 @@ export function ScrollRestoration() {
       restoreScrollPosition(storedY);
     }, 120);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      window.requestAnimationFrame(() => {
+        restoreHashTarget();
+      });
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   useEffect(() => {
     let frame: number | null = null;
