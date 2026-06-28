@@ -79,7 +79,7 @@ function AnimatedTitle({ text, id }: { text: string; id: number }) {
   return (
     <motion.h1
       key={id}
-      className="mt-7 text-[52px] font-semibold leading-[0.96] tracking-[-0.065em] text-white sm:text-6xl md:text-[72px] lg:text-[88px]"
+      className="mt-7 text-[52px] font-semibold uppercase leading-[0.96] tracking-[-0.065em] text-white sm:text-6xl md:text-[72px] lg:text-[88px]"
       variants={wordContainer}
       initial="hidden"
       animate="show"

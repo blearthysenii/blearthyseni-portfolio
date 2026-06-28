@@ -1,20 +1,38 @@
-export const techStack = ["React", "Next.js", "TypeScript", "FastAPI", "PostgreSQL"];
-
 export const skills = [
   {
     title: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+    ],
   },
   {
     title: "Backend",
-    items: ["Python", "FastAPI", "REST APIs", "JWT Auth"],
+    items: [
+      "PHP",
+      "Python",
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "REST APIs",
+      "JWT Authentication",
+    ],
   },
   {
-    title: "Database & Deploy",
-    items: ["PostgreSQL", "Neon", "Vercel", "Render"],
+    title: "Database",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Firebase"],
+  },
+  {
+    title: "AI Tools",
+    items: ["OpenAI", "Claude", "Claude Code", "Codex"],
   },
   {
     title: "Tools",
-    items: ["Git", "GitHub", "Postman", "VS Code"],
+    items: ["Git", "GitHub", "Postman", "VS Code", "Vercel", "Render", "Neon"],
   },
 ];

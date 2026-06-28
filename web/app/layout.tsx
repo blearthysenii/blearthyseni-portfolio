@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ScrollRestoration } from "../components/common/ScrollRestoration";
 import { ThemeProvider } from "../components/layout/ThemeProvider";
 import "./globals.css";
 
@@ -29,7 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ScrollRestoration />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
