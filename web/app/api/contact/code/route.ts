@@ -77,7 +77,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: copy.invalidEmail }, { status: 400 });
     }
 
-    if (!process.env.RESEND_API_KEY || !process.env.EMAIL_FROM) {
+    if (
+      !process.env.DATABASE_URL ||
+      !process.env.RESEND_API_KEY ||
+      !process.env.EMAIL_FROM
+    ) {
       return NextResponse.json({ error: copy.notConfigured }, { status: 500 });
     }
 

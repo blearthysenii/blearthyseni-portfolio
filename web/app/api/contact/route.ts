@@ -106,6 +106,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (
+      !process.env.DATABASE_URL ||
       !process.env.RESEND_API_KEY ||
       !process.env.EMAIL_FROM ||
       !process.env.EMAIL_TO

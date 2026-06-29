@@ -55,6 +55,10 @@ function getCopy(locale: ContactCodeLocale) {
       locale === "al"
         ? "Verifikimi dështoi."
         : "Verification failed.",
+    notConfigured:
+      locale === "al"
+        ? "Baza e të dhënave nuk është konfiguruar."
+        : "Database is not configured.",
   };
 }
 
@@ -80,6 +84,10 @@ export async function POST(request: NextRequest) {
 
     if (!codePattern.test(code)) {
       return NextResponse.json({ error: copy.codeInvalid }, { status: 400 });
+    }
+
+    if (!process.env.DATABASE_URL) {
+      return NextResponse.json({ error: copy.notConfigured }, { status: 500 });
     }
 
     const result = await verifyContactCode(email, code);
