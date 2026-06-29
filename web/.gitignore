@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+.contact-approvals/
+.contact-verifications/
+.contact-email-codes/
 
 # debug
 npm-debug.log*
