@@ -67,7 +67,7 @@ async function ensureTable() {
   tableReady ??= getPool()
     .query(`
       CREATE TABLE IF NOT EXISTS contact_verification_codes (
-        email TEXT PRIMARY KEY,
+        email TEXT NOT NULL,
         code_hash TEXT NOT NULL,
         attempts INTEGER NOT NULL DEFAULT 0,
         verified BOOLEAN NOT NULL DEFAULT FALSE,
@@ -75,6 +75,16 @@ async function ensureTable() {
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
         last_sent_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
+
+      DELETE FROM contact_verification_codes
+      WHERE ctid NOT IN (
+        SELECT DISTINCT ON (email) ctid
+        FROM contact_verification_codes
+        ORDER BY email, last_sent_at DESC, created_at DESC
+      );
+
+      CREATE UNIQUE INDEX IF NOT EXISTS contact_verification_codes_email_unique
+      ON contact_verification_codes (email);
     `)
     .then(() => undefined);
 
