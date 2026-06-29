@@ -63,15 +63,15 @@ const wordItem: Variants = {
 };
 
 const slogansEn = [
-  "Building software people love to use.",
-  "Modern software. Real impact.",
-  "Code. Create. Deliver.",
+  "Full Stack Developer.",
+  "BSc in Computer Science.",
+  "Software Engineer.",
 ];
 
 const slogansAl = [
-  "I kthej idetë në produkte digjitale.",
-  "Softuer modern. Ndikim real.",
-  "Kodoj. Krijoj. Realizoj.",
+  "Full Stack Developer.",
+  "Bachelor në Shkenca Kompjuterike.",
+  "Software Engineer.",
 ];
 
 function AnimatedTitle({ text, id }: { text: string; id: number }) {
