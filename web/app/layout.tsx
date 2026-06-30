@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   description:
     "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer focused on modern web applications, FastAPI, React, Next.js and PostgreSQL.",
 
+  alternates: {
+    canonical: "https://blearthyseni.com",
+  },
+
   openGraph: {
     title: "Bleart Hyseni - Full Stack Developer",
     description:
@@ -34,14 +38,6 @@ export const metadata: Metadata = {
     url: "https://blearthyseni.com",
     siteName: "Bleart Hyseni",
     type: "website",
-    images: [
-      {
-        url: "https://blearthyseni.com/logo.png",
-        width: 1200,
-        height: 1200,
-        alt: "Bleart Hyseni - Full Stack Developer",
-      },
-    ],
   },
 
   twitter: {
@@ -49,7 +45,6 @@ export const metadata: Metadata = {
     title: "Bleart Hyseni - Full Stack Developer",
     description:
       "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer focused on modern web applications.",
-    images: ["https://blearthyseni.com/logo.png"],
   },
 };
 
