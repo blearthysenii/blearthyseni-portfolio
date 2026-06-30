@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://blearthyseni.com/logo.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "Bleart Hyseni - Full Stack Developer",
       },
     ],
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bleart Hyseni - Full Stack Developer",
     description:
-      "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer.",
-    images: ["/og-image.png"],
+      "Personal portfolio of Bleart Hyseni, a Full Stack Web Developer focused on modern web applications.",
+    images: ["https://blearthyseni.com/logo.png"],
   },
 };
 
